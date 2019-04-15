@@ -76,8 +76,7 @@ database.ref().on("child_added", function(childSnapshot) {
   var timeDiff = moment().diff(moment(firstTrainConverted), "minutes");
   console.log("Difference In Time: " + timeDiff);
 
-  //find the time apart by finding the remainder of the time difference and the frequency - use modal to get whole remainder number
-
+  //find the time apart by finding the remainder of the time difference and the frequency 
   var timeRemainder = timeDiff % frequency;
   console.log(timeRemainder);
 
