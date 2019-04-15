@@ -7,14 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <title>Train Scheduler</title>
 </head>
 
 <body>
 
-  <header class="jumbotron jumbotron-fluid bg-success text-light">
+  <header class="jumbotron jumbotron-fluid bg-success text-light jumboImage">
     <div class="container-fluid text-center">
       <h1 class="display-4">Train Scheduler</h1>
+      <h2 class="text-center" id="currentTime"></h2>
     </div>
   </header>
 
@@ -28,7 +30,7 @@
           </h4>
           <div class="card-body">
             <!-- start form -->
-            <form id="employee-form">
+            <form>
               <!-- Train name input  -->
               <div class="form-group">
                 <label for="name">Train Name</label>
@@ -50,7 +52,7 @@
                 <input class="form-control" type="number" id="frequency" placeholder="Frequency" />
               </div>
               <!-- submit button -->
-              <button class="btn btn-block btn-success" type="submit">Add Train</button>
+              <button class="btn btn-block btn-success sumbit-btn" type="submit">Add Train</button>
             </form>
             <!-- end form -->
           </div>
@@ -78,7 +80,7 @@
                    <th scope="col">Minutes Away</th>
                  </tr>
                </thead>
-               <tbody>
+               <tbody id="schedule">
                  <!-- content will be written here -->
                </tbody>
             </table>

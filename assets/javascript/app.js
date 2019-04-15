@@ -1,11 +1,12 @@
 $(document).ready(function(){
-  var config = {
-    apiKey: "AIzaSyAZeEYNbogcNXHW_lt9Y-KdMy2TniSSFws",
-    authDomain: "classwork-1760f.firebaseapp.com",
-    databaseURL: "https://classwork-1760f.firebaseio.com",
-    projectId: "classwork-1760f",
-    storageBucket: "classwork-1760f.appspot.com",
-    messagingSenderId: "437157596095"
+   // Initialize Firebase
+   var config = {
+    apiKey: "AIzaSyB7_65uEuBnFYqare81GslDlf0Y4PUC2mA",
+    authDomain: "train-scheduler-9316d.firebaseapp.com",
+    databaseURL: "https://train-scheduler-9316d.firebaseio.com",
+    projectId: "train-scheduler-9316d",
+    storageBucket: "train-scheduler-9316d.appspot.com",
+    messagingSenderId: "816486291564"
   };
   firebase.initializeApp(config);
   
@@ -13,7 +14,7 @@ $(document).ready(function(){
 
   //on button click, store data
 
-  $("sumbit-btn").on("click", function(event){
+  $(".sumbit-btn").on("click", function(event){
     //to prevent page from refreshing
     event.preventDefault();
 
@@ -54,7 +55,7 @@ database.ref().on("child_added", function(childSnapshot) {
   var remove = "<button class='glyphicon glyphicon-trash' id=" + key + "></button>"
 
 
-  //code in math to find the next train time and minutes until next arrival based off of frequency value and first train time value.
+  //code in math to find the next train time and minutes 
 
   //convert first train time back a year to make sure it is set before current time before pushing to firebase.
 
@@ -96,22 +97,9 @@ database.ref().on("child_added", function(childSnapshot) {
   $("#schedule").prepend("<tr><td>" + name + "</td><td>" + destination + "</td><td>" + frequency + "</td><td>" + nextTrainArr + "</td><td>" + nextTrainMin + "</td><td>" + remove + "</td></tr>");
 
 
-}, function(err) {
-  console.log(err);
 });
 
-         //on click command to delete key when user clicks the trash can gliphicon
-
-$(document).on("click", ".glyphicon-trash", deleteTrain);
-
-function deleteTrain() {
-  var deleteKey = $(this).attr("id");
-  //console.log($(this).attr("id"));
-  database.ref().child(deleteKey).remove();
-
-  location.reload();
-
-}
+  
 
 
 }) 
